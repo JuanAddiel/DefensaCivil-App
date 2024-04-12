@@ -35,6 +35,13 @@ import { Servicio } from './pages/Servicio';
 import { Noticias } from './pages/Noticias';
 import { Medidas } from './pages/MedidasPreventivas';
 import { Miembros } from './pages/Miembros';
+import Inicio from './pages/Inicio';
+import VoluntarioForm from './pages/VoluntarioForm';
+import  VoluntarioForm2 from './pages/VoluntarioForm2';
+import FormularioDatos from './pages/FormularioDatos';
+import ContactoForm from './pages/ContactoForm';
+import FormularioParticipacion from './pages/FormularioParticipacion';
+import DocumentosForm from './pages/DomumentosForm';
 
 setupIonicReact();
 
@@ -44,7 +51,11 @@ const App: React.FC = () => (
       <IonTabs>
         <IonRouterOutlet>
           <Route exact path="/tab1">
-            <Miembros />
+            <VoluntarioForm2/>
+          </Route>
+          
+          <Route exact path="/tab2">
+            <InicioSeccion />
           </Route>
           <Route exact path="/">
             <Redirect to="/tab1" />
@@ -59,7 +70,7 @@ const App: React.FC = () => (
             <IonIcon icon={images} />
             <IonLabel>Photos</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
+          <IonTabButton tab="tab3" href="">
             <IonIcon aria-hidden="true" icon={square} />
             <IonLabel>Tab 3</IonLabel>
           </IonTabButton>
