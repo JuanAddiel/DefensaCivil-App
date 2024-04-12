@@ -1,0 +1,17 @@
+.ion-card-title {
+  font-size: 1.5em; /* Ajusta el tamaño de la fuente según tus necesidades */
+  color: #333; /* Ajusta el color según la paleta de tu aplicación */
+  margin-bottom: 10px; /* Espacio después del título para separarlo del texto */
+}
+
+/* Ajustes para la imagen dentro de IonCardContent */
+.ion-img-container {
+  margin-bottom: 20px; /* Espacio debajo de la imagen */
+}
+
+/* Si estás utilizando IonImg directamente, puedes aplicar el estilo directamente al componente */
+ion-img {
+  display: block; /* Asegura que la imagen no tenga elementos en línea a su lado */
+  width: 100%; /* Opcional: hace que la imagen ocupe el ancho completo */
+  margin-bottom: 20px; /* Espacio debajo de la imagen */
+}
