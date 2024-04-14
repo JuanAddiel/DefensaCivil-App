@@ -1,8 +1,12 @@
 import {
   IonPage,
   IonContent,
+  IonHeader,
   IonCard,
+  IonToolbar,
   IonCardHeader,
+  IonButtons,
+  IonButton,
   IonCardSubtitle,
   IonCardTitle,
   IonCardContent,
@@ -11,12 +15,28 @@ import {
   IonAccordionGroup,
   IonAccordion,
   IonImg,
+  IonTitle,
+  IonIcon,
 } from "@ionic/react";
+import { caretBack } from "ionicons/icons";
+
 import "../components/Historia.css"; // archivo CSS
 
-const Historia: React.FC = () => {
+const Historia: React.FC<any> = ({setPage}) => {
   return (
-    <IonPage>
+    <>
+         <IonPage>
+        <IonHeader>
+          <IonToolbar>
+            <IonButtons slot="start" onClick={() => setPage("")}>
+              <IonButton>
+                <IonIcon icon={caretBack} />
+                <IonLabel>Atras</IonLabel>
+              </IonButton>
+            </IonButtons>
+            <IonTitle>Historia</IonTitle>
+          </IonToolbar>
+        </IonHeader>
       <IonContent fullscreen>
         <IonCard>
           <IonCardHeader>
@@ -170,6 +190,8 @@ const Historia: React.FC = () => {
         {/* Continuar agregando más componentes según sea necesario */}
       </IonContent>
     </IonPage>
+    </>
+  
   );
 };
 

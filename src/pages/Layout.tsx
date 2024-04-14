@@ -21,6 +21,8 @@ import { ListaAlbergues } from "./ListaAlbergues";
 import { MapasAlbergues } from "./MapasAlbergues";
 import { Medidas } from "./MedidasPreventivas";
 import { Miembros } from "./Miembros";
+import Historia from "./Historia";
+import GaleriaVideo from "./GaleriaVideo";
 
 export const Layout: FC = () => {
   const [page, setPage]= useState<string>("");
@@ -57,6 +59,8 @@ export const Layout: FC = () => {
             )}
             {page === "Medidas Preventivas" && <Medidas setPage={setPage} />}
             {page === "Miembros" && <Miembros setPage={setPage} />}
+            {page === "Historia" && <Historia setPage={setPage} />}
+            {page === "Videos" && <GaleriaVideo setPage={setPage} />}
           </IonRow>
         </IonGrid>
       </IonContent>

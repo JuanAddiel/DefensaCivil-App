@@ -7,7 +7,16 @@ import {
   IonCardContent,
   IonThumbnail,
   IonImg,
+  IonHeader,
+  IonToolbar,
+  IonButtons,
+  IonIcon,
+  IonButton,
+  IonLabel,
+  IonTitle,
 } from "@ionic/react";
+import { caretBack } from "ionicons/icons";
+
 import "../components/GaleriaVideo.css";
 
 const videos = [
@@ -32,9 +41,20 @@ const videos = [
   // Más videos aquí
 ];
 
-const GaleriaVideo: React.FC = () => {
+const GaleriaVideo: React.FC<any> = ({setPage}) => {
   return (
     <IonPage>
+        <IonHeader>
+          <IonToolbar>
+            <IonButtons slot="start" onClick={() => setPage("")}>
+              <IonButton>
+                <IonIcon icon={caretBack} />
+                <IonLabel>Atras</IonLabel>
+              </IonButton>
+            </IonButtons>
+            <IonTitle>Noticias</IonTitle>
+          </IonToolbar>
+        </IonHeader>
       <IonContent>
         {videos.map((video) => (
           <IonCard key={video.id}>
