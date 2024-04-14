@@ -20,7 +20,7 @@ const FormularioDatosPersonales = () => {
                     <IonTitle className="text-white">Formulario de Voluntario</IonTitle>
                 </IonToolbar>
             </IonHeader>
-            <IonContent className="bg-gray-100">
+            <IonContent className="bg-gray-100 ion-padding-horizontal">
                 <div className="container mx-auto py-8">
                     <img src="src/assets/img/logo.png" alt="" /> <br />
                     <form action="procesar_datos_personales.php" method="POST">
