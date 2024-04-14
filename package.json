@@ -4,7 +4,7 @@
   "version": "4.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test.e2e": "cypress run",
@@ -26,6 +26,7 @@
     "@ionic/pwa-elements": "^3.2.2",
     "@ionic/react": "^7.0.0",
     "@ionic/react-router": "^7.0.0",
+    "@react-google-maps/api": "^2.19.3",
     "@types/react-router": "^5.1.20",
     "@types/react-router-dom": "^5.3.3",
     "axios": "^1.6.8",

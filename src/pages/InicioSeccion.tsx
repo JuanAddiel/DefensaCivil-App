@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+import axios from "axios";
 import {
   IonIcon,
   IonLabel,
@@ -5,15 +7,47 @@ import {
   IonTabButton,
   IonTabs,
 } from "@ionic/react";
+import { useHistory } from "react-router";
 
 const InicioSeccion: React.FC = () => {
-  
+  const history = useHistory();
+  const [cedula, setCedula] = useState("");
+  const [clave, setClave] = useState("");
+  const [rememberMe, setRememberMe] = useState(false);
+
+  const handleLogin = async () => {
+    try {
+     const formData = new FormData();
+     formData.append("cedula", cedula);
+     formData.append("clave", clave);
+
+     const response = await axios.post(
+       "https://adamix.net/defensa_civil/def/iniciar_sesion.php",
+       formData
+     );
+      const { data } = response;
+      if (data.exito) {
+        localStorage.setItem("usuario", JSON.stringify(data.usuario));
+        localStorage.setItem("token", data.token);
+        history.push("/Inicio")
+                    console.log("Inicio sesión");
+
+       }
+    } catch (error) {
+      console.error("Error al iniciar sesión:", error);
+    }
+  };
+
+  const handleRememberMe = () => {
+    setRememberMe(!rememberMe);
+  };
+
   return (
     <>
       <div className="h-screen w-full">
         <div className="bg-gray-800 h-screen mx-auto max-w-md">
           <div className="p-12">
-            <p className="text-5xl pt-10 text-yellow-500 font-bold">
+            <p className="text-5xl  text-yellow-500 font-bold">
               <br />
               Defensa Civil
             </p>
@@ -28,6 +62,8 @@ const InicioSeccion: React.FC = () => {
                 name="cedula"
                 className="bg-transparent border-0 text-yellow-500 w-full focus:outline-none focus:rang"
                 type="text"
+                value={cedula}
+                onChange={(e) => setCedula(e.target.value)}
               />
             </div>
 
@@ -37,6 +73,8 @@ const InicioSeccion: React.FC = () => {
                 name="clave"
                 className="bg-transparent border-0  text-yellow-500 focus:outline-none focus:rang w-full"
                 type="password"
+                value={clave}
+                onChange={(e) => setClave(e.target.value)}
               />
             </div>
           </div>
@@ -48,6 +86,8 @@ const InicioSeccion: React.FC = () => {
                   name="toggle"
                   id="toggle"
                   className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-gray-800 border-4 appearance-none cursor-pointer"
+                  checked={rememberMe}
+                  onChange={handleRememberMe}
                 />
                 <label
                   htmlFor="toggle"
@@ -55,7 +95,7 @@ const InicioSeccion: React.FC = () => {
                 ></label>
               </div>
               <label htmlFor="toggle" className="text-xs text-gray-300 mt-1">
-                remeber me
+                Remember me
               </label>
             </div>
             <div className="bg mt-1 text-xs text-gray-300">
@@ -63,7 +103,10 @@ const InicioSeccion: React.FC = () => {
             </div>
           </div>
           <div className="w-full p-12">
-            <button className=" bg-yellow-500 p-3 rounded-3xl w-full h-full hover:bg-yellow-600">
+            <button
+              className=" bg-yellow-500 p-3 rounded-3xl w-full h-full hover:bg-yellow-600"
+              onClick={handleLogin}
+            >
               {" "}
               Login
             </button>
