@@ -1,0 +1,14 @@
+/* GaleriaVideo.css */
+
+video {
+  width: 100%; /* Asegura que el video se ajuste al ancho del contenedor */
+  height: auto; /* Mantiene la proporción */
+}
+
+ion-card {
+  margin-bottom: 20px; /* Espacio entre tarjetas */
+}
+
+ion-thumbnail {
+  margin-right: 15px; /* Espacio entre la miniatura y el video */
+}

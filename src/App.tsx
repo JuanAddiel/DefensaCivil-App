@@ -55,20 +55,6 @@ const App: React.FC = () => (
           <Layout/>
         </Route>
       </IonRouterOutlet>
-      {/* <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/tab1">
-            <IonIcon aria-hidden="true" icon={triangle} />
-            <IonLabel>Tab 1</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
-            <IonIcon icon={images} />
-            <IonLabel>Photos</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="tab3" href="">
-            <IonIcon aria-hidden="true" icon={square} />
-            <IonLabel>Tab 3</IonLabel>
-          </IonTabButton>
-        </IonTabBar> */}
     </IonReactRouter>
   </IonApp>
 );
