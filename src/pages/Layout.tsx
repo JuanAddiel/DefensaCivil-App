@@ -23,6 +23,7 @@ import { Medidas } from "./MedidasPreventivas";
 import { Miembros } from "./Miembros";
 import Historia from "./Historia";
 import GaleriaVideo from "./GaleriaVideo";
+import FormularioDatosPersonales from "./VoluntarioForm";
 
 export const Layout: FC = () => {
   const [page, setPage]= useState<string>("");
@@ -61,6 +62,7 @@ export const Layout: FC = () => {
             {page === "Miembros" && <Miembros setPage={setPage} />}
             {page === "Historia" && <Historia setPage={setPage} />}
             {page === "Videos" && <GaleriaVideo setPage={setPage} />}
+            {page === "Quiero ser voluntario" && <FormularioDatosPersonales setPage={setPage} />}
           </IonRow>
         </IonGrid>
       </IonContent>

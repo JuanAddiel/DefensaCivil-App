@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonInput, IonLabel, IonItem, IonCheckbox, IonSelect, IonSelectOption, IonButton } from '@ionic/react';
+import React, { FC, useState } from 'react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonInput, IonLabel, IonItem, IonCheckbox, IonSelect, IonSelectOption, IonButton, IonButtons, IonIcon } from '@ionic/react';
 import 'tailwindcss/tailwind.css'; 
+import { caretBack } from 'ionicons/icons';
 
-const FormularioDatosPersonales = () => {
+const FormularioDatosPersonales:FC<any> = ({setPage}) => {
      const [section, setSection] = useState(1);
 
      const handleBack = () => {
@@ -14,12 +15,18 @@ const FormularioDatosPersonales = () => {
      }
 
     return (
-        <IonPage>
-            <IonHeader>
-                <IonToolbar color="primary">
-                    <IonTitle className="text-white">Formulario de Voluntario</IonTitle>
-                </IonToolbar>
-            </IonHeader>
+           <IonPage>
+        <IonHeader>
+          <IonToolbar>
+            <IonButtons slot="start" onClick={() => setPage("")}>
+              <IonButton>
+                <IonIcon icon={caretBack}/>
+                <IonLabel >Atras</IonLabel>
+                </IonButton>
+            </IonButtons>
+            <IonTitle>Voluntario</IonTitle>
+          </IonToolbar>
+        </IonHeader>
             <IonContent className="bg-gray-100 ion-padding-horizontal">
                 <div className="container mx-auto py-8">
                     <img src="src/assets/img/logo.png" alt="" /> <br />
